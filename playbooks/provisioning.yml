@@ -11,3 +11,8 @@
                 name: apache2
                 state: latest 
             become: yes
+          - name: 'Install modphp'
+            apt:
+                name: libapache2-mod-php5 
+                status: latest
+            become: yes
