@@ -22,3 +22,11 @@
                name: wordpress_db
                login_user: root
                state: present
+
+          - name: 'Make a user wordpress'
+            mysql_user:
+               login_user: root
+               name: wordpress_user
+               password: 
+               priv: 'wordpress_db.*:ALL'
+               state: present
