@@ -1,0 +1,12 @@
+- hosts: 127.0.0.1 
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Create IAM user
+      iam_role:
+        aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}" 
+        aws_secret_key: "{{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}" 
+        ec2_region: "{{ lookup('env', 'AWS_REGION') }}" 
+        name: rolelinuxacaemy 
+        assume_role_policy_document: "{{ lookup('file','policy.json') }}"
+        description: foda se
