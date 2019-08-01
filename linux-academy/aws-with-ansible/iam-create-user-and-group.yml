@@ -10,7 +10,7 @@
         iam_type: user
         state: present
         name: linuxacademy
-        password: senha@123@123@123
+        password: mypass
     - name: Create new group with policy and add user
       iam_group:
         aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}" 
